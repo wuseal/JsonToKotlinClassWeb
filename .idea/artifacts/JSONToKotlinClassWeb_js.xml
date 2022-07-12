@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JSONToKotlinClassWeb-js">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="JSONToKotlinClassWeb-js.jar" />
+  </artifact>
+</component>
