@@ -1,9 +1,8 @@
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import kotlinx.browser.window
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
 import model.Repository
@@ -34,11 +33,12 @@ fun main() {
                 inputJson = it
             }
 
+            val scope = rememberCoroutineScope()
             Div {
                 Button(
                     attrs = {
                         onClick {
-                            GlobalScope.launch(Dispatchers.Main) {
+                            scope.launch {
                                 println("start generate Code")
                                 val code = Repository.generateKotlinCode(inputJson)
                                 window.navigator.clipboard.writeText(code).await()
