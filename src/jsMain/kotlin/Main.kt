@@ -20,7 +20,6 @@ fun main() {
     var inputJson: String by mutableStateOf("")
 
     renderComposable(rootElementId = "root") {
-        document.title = "Json To Kotlin Class"
 
         Div({
             style {
