@@ -2,6 +2,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
@@ -16,10 +17,10 @@ import ui.jsonInputView
 
 fun main() {
 
-
     var inputJson: String by mutableStateOf("")
 
     renderComposable(rootElementId = "root") {
+        document.title = "Json To Kotlin Class"
 
         Div({
             style {
